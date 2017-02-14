@@ -1,2 +1,3 @@
-# dice-game-hw
-A simple dice game
+# Card Game
+
+A simple card game: War.
