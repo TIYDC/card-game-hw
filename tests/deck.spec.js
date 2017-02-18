@@ -25,6 +25,14 @@ describe('In the deck', function() {
             expect(result[Math.floor(Math.random() * 52)]).to.match(/^(A|K|Q|J|10|[2-9])(H|S|D|C)?$/);
         });
 
+        it('should not return cards in the same order each time', function() {
+            let deckOne = deck();
+            let deckTwo = deck();
+            let deckThree = deck();
+            expect(deckOne[0]).to.not.be.oneOf([ deckTwo[0], deckThree[0] ]);
+            expect(deckOne[51]).to.not.be.oneOf([ deckTwo[51], deckThree[51] ]);
+        });
+
         it('should return a deck with suits (ADVENTURE MODE)', function() {
             let result = deck();
             expect(result).to.be.an('array');
